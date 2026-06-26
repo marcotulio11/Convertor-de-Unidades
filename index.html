@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de Unidades</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Conversor de Unidades</h1>
+      <p>Calculadora de conversões do dia a dia</p>
+    </header>
+
+    <main>
+      <div class="converter-section">
+        <div class="tabs">
+          <button class="tab-btn active" data-type="temperatura">Temperatura</button>
+          <button class="tab-btn" data-type="peso">Peso</button>
+          <button class="tab-btn" data-type="distancia">Distância</button>
+          <button class="tab-btn" data-type="culinaria">Culinária</button>
+          <button class="tab-btn" data-type="moeda">Moeda</button>
+        </div>
+
+        <div class="converter-form">
+          <div class="input-group">
+            <div class="input-wrapper">
+              <label for="fromValue">De:</label>
+              <input type="number" id="fromValue" value="1" step="any">
+              <select id="fromUnit"></select>
+            </div>
+            <button class="swap-btn" id="swapBtn">⇄</button>
+            <div class="input-wrapper">
+              <label for="toValue">Para:</label>
+              <input type="number" id="toValue" readonly>
+              <select id="toUnit"></select>
+            </div>
+          </div>
+          
+          <div class="currency-rate" id="currencyRate" style="display: none;">
+            <label for="exchangeRate">Taxa de câmbio:</label>
+            <input type="number" id="exchangeRate" step="any" placeholder="1">
+          </div>
+
+          <button class="convert-btn" id="convertBtn">Converter</button>
+        </div>
+      </div>
+
+      <div class="history-section">
+        <h2>Histórico</h2>
+        <div class="history-list" id="historyList">
+          <p class="empty-history">Nenhuma conversão ainda</p>
+        </div>
+        <button class="clear-history-btn" id="clearHistoryBtn">Limpar Histórico</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="dist/main.js"></script>
+</body>
+</html>
